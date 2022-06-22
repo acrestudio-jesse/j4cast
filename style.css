@@ -1,13 +1,13 @@
 body {
   display: flex;
   justify-content: center;
-  /* align-content: center; */
+  background-size: cover;
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: #222;
-  background-image: url("https://source.unsplash.com/1920x1080/?landscape");
+  background-image: url('https://source.unsplash.com/1920x1080/?landscape');
 }
 
 .weather-card {
@@ -74,15 +74,15 @@ body {
   font-size: 22px;
 }
 
-.card.loading{
+.card.loading {
   visibility: hidden;
   max-height: 20px;
-position: relative;
+  position: relative;
 }
 
-.card.loading::after{
+.card.loading::after {
   visibility: visible;
-  content: "Loading...";
+  content: 'Loading...';
   color: #fff;
   position: absolute;
   top: 0;
