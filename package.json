@@ -2,16 +2,10 @@
   "name": "j4cast",
   "version": "1.0.0",
   "description": "small weather app",
-  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "build": "build parcel index.html"
   },
   "author": "Jesse T. Hickey",
   "license": "ISC",
   "dependencies": {},
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5"
-  }
+  "devDependencies": {}
 }
