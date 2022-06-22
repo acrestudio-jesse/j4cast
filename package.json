@@ -2,10 +2,11 @@
   "name": "j4cast",
   "version": "1.0.0",
   "description": "small weather app",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Jesse T. Hickey",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "weatherapi": "0.0.8"
+  },
   "devDependencies": {}
 }
