@@ -6,10 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://https://github.com/acrestudio-jesse/j4cast"
-  },
   "author": "Jesse T. Hickey",
   "license": "ISC",
   "dependencies": {}
