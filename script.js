@@ -1,6 +1,6 @@
 const city = document.querySelector('.city');
 //Display
-const card =  document.querySelector('.card')
+const card = document.querySelector('.card');
 //Current
 const temp = document.querySelector('.tempurature');
 const humid = document.querySelector('.humidity');
@@ -10,18 +10,26 @@ const searchBar = document.querySelector('.search-bar');
 const searchBtn = document.querySelector('.search-btn');
 const iconDisplay = document.querySelector('.icon');
 //Forecast
-const day2Date = document.querySelector('.date-2')
-const day3Date = document.querySelector('.date-3')
+const day2Date = document.querySelector('.date-2');
+const day3Date = document.querySelector('.date-3');
 
-const day1Temp = document.querySelector('.temp-1')
-const day2Temp = document.querySelector('.temp-2')
-const day3Temp = document.querySelector('.temp-3')
+const day1Temp = document.querySelector('.temp-1');
+const day2Temp = document.querySelector('.temp-2');
+const day3Temp = document.querySelector('.temp-3');
 
-const day1Icon = document.querySelector('.icon-1')
-const day2Icon = document.querySelector('.icon-2')
-const day3Icon = document.querySelector('.icon-3')
+const day1Icon = document.querySelector('.icon-1');
+const day2Icon = document.querySelector('.icon-2');
+const day3Icon = document.querySelector('.icon-3');
 
-const weekdays = ["Sunday", 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const weekdays = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 
 const weather = {
   url: 'http://api.weatherapi.com/v1',
@@ -37,7 +45,7 @@ const weather = {
 
       console.log(data);
       this.renderCurrentWeather(data, city);
-      this.renderForecast(data, city)
+      this.renderForecast(data, city);
     } catch (error) {
       console.error(`🦜Bird Problem: ${error}`);
     }
@@ -53,26 +61,27 @@ const weather = {
     iconDisplay.src = icon;
     humid.textContent = `${humidity}%`;
     windSpeed.textContent = `${wind_kph} km/h`;
-    uvDisplay.textContent = `${uv}`;
+    uvDisplay.textContent = `UV Index ${uv}`;
 
     document.body.style.backgroundImage = `url('${this.bgUrl}${name}')`;
     // if (document.body.style.backgroundImage === )
-    card.classList.remove('loading')
+    card.classList.remove('loading');
   },
 
-
-  renderForecast: function(data) {
+  renderForecast: function (data) {
     const { forecastday } = data.forecast;
-day2Date.textContent = weekdays[new Date(forecastday[1].date_epoch*1000).getUTCDay()]
-day3Date.textContent = weekdays[new Date(forecastday[2].date_epoch*1000).getUTCDay()]
+    day2Date.textContent =
+      weekdays[new Date(forecastday[1].date_epoch * 1000).getUTCDay()];
+    day3Date.textContent =
+      weekdays[new Date(forecastday[2].date_epoch * 1000).getUTCDay()];
 
-day1Temp.textContent = `${forecastday[0].day.avgtemp_c}°C`
-day2Temp.textContent = `${forecastday[1].day.avgtemp_c}°C`
-day3Temp.textContent = `${forecastday[2].day.avgtemp_c}°C`
+    day1Temp.textContent = `${forecastday[0].day.avgtemp_c}°C`;
+    day2Temp.textContent = `${forecastday[1].day.avgtemp_c}°C`;
+    day3Temp.textContent = `${forecastday[2].day.avgtemp_c}°C`;
 
-day1Icon.src = forecastday[0].day.condition.icon
-day2Icon.src = forecastday[1].day.condition.icon
-day3Icon.src = forecastday[2].day.condition.icon
+    day1Icon.src = forecastday[0].day.condition.icon;
+    day2Icon.src = forecastday[1].day.condition.icon;
+    day3Icon.src = forecastday[2].day.condition.icon;
   },
 
   searchCity: function () {
